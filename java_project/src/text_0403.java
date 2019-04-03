@@ -7,13 +7,18 @@ class person
         this.name = name;
         this.age = age;
     }
+
+    @Override
+    public String toString() {
+        return " 姓名:"+this.name +" 年龄:" +this.age;
+    }
 }
 
 public class text_0403
 {
     public static void main(String[] args)
     {
-        fun(new person("zhangsan",33));
+        fun(new person("张三",33));
         fun("hello");
 
     }
