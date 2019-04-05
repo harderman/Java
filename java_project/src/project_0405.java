@@ -16,7 +16,7 @@ class Person1
     }
     public  Person1()
     {
-    System.out.println("员工信息");
+        System.out.println("员工信息");
     }
     public void setName(String name)
     {
