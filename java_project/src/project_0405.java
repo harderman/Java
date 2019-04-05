@@ -8,7 +8,16 @@ class Person1
     private  String name;
     private int age;
     private double salary;
-
+    public  Person1(String name,int age,double salary)
+    {
+        this.name = name;
+        this.age = age;
+        this.salary = salary;
+    }
+    public  Person1()
+    {
+    System.out.println("员工信息");
+    }
     public void setName(String name)
     {
         this.name = name;
@@ -38,14 +47,8 @@ class Person1
     {
         return salary;
     }
-    public void Person1()
-    {
-        System.out.println("员工信息");
-    }
-    public String Person1(String sex)
-    {
-        return sex;
-    }
+
+
 
     @Override
     public String toString()
@@ -72,20 +75,8 @@ public class project_0405
 {
     public static void main(String[] args)
     {
-        Person1 per =  new Person1();
-        Person1 per1 =  new Person1();
-        per.setAge(22);
-        //per.getAge();
-        per.setName("张三");
-        //per.getName();
-        per.setSalary(1000000);
-        //per.getSalary();
-        per1.setAge(22);
-        //per1.getAge();
-        per1.setName("张三");
-        //per1.getName();
-        per1.setSalary(1000000);
-       // per1.getSalary();
+        Person1 per =  new Person1("张三",22,10000);
+        Person1 per1 =  new Person1("张三",22,10000);
         System.out.println(per);
         System.out.println(per.equals(per1));
     }
