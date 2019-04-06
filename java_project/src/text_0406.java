@@ -1,5 +1,5 @@
 class hungryMan{
-   private static hungryMan man  = new hungryMan();
+   private final static hungryMan man  = new hungryMan();
    private hungryMan(){ }
    final static hungryMan getInstance(){
        return man;
