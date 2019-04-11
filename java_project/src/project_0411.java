@@ -17,7 +17,8 @@ public class project_0411{
         fun(message);
     }
     public static void fun(Message<?> temp){
-        //temp.setMassage(100);
+        //temp.setMassage(100);不能修改
         System.out.println(temp.getMassage());
     }
+
 }
