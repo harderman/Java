@@ -15,5 +15,7 @@ public class text {
         System.out.println(learn1.getName());
         Learn learn2 = (Learn)Class.forName("Learn").newInstance();//反射实例化Learn的对象
         learn2.means();
+        Class<?> learn3 = Learn.class;
+        System.out.println(learn3);
     }
 }
