@@ -1,11 +1,11 @@
 
 interface Phone{
-    public void BuyPhone();
-}
+public void BuyPhone();
+        }
 class XiaoMi implements Phone{
     @Override
     public void BuyPhone() {
-        System.out.println("谁他妈买小米！");
+        System.out.println("国产小米！");
     }
 }
 class Iphone implements Phone{
@@ -30,9 +30,9 @@ class PhoneFactory{
 }
 public class text_1 {
     public static void main(String[] args) {
-    Phone phone = PhoneFactory.getInterface("XiaoMi");
-    Phone phone1 = PhoneFactory.getInterface("Iphone");
-    phone.BuyPhone();
-    phone1.BuyPhone();
+        Phone phone = PhoneFactory.getInterface("XiaoMi");
+        Phone phone1 = PhoneFactory.getInterface("Iphone");
+        phone.BuyPhone();
+        phone1.BuyPhone();
     }
 }
