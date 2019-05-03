@@ -2,7 +2,7 @@ import java.lang.reflect.Field;
 class Man{
     private String name;
     private int age;
-
+    int salary;
     public String getName() {
         return name;
     }
@@ -18,13 +18,23 @@ class Man{
     public void setAge(int age) {
         this.age = age;
     }
-     public void Man(String name,int age){
+
+    public int getSalary() {
+        return salary;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
+
+    public void Man(String name, int age,int salary){
         this.age = age;
         this.name = name;
+        this.salary = salary;
      }
     @Override
     public String toString() {
-        return "名字是："+this.name+" "+"年龄是："+this.age;
+        return "名字是："+this.name+" "+";年龄是："+this.age + "; salary is:"+this.salary;
     }
 }
 
@@ -37,7 +47,8 @@ public class attribute_text {
         for (Field field : fields) {
             System.out.println(field);
         }
-        Field field = classes.getField("");
+        System.out.println("--------------------------");
+        Field field = classes.getDeclaredField("salary");
         System.out.println(field);
         System.out.println(object);
     }
