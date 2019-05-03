@@ -1,6 +1,6 @@
 import java.util.LinkedList;
-        import java.util.Queue;
-        import java.util.concurrent.atomic.AtomicInteger;
+import java.util.Queue;
+import java.util.concurrent.atomic.AtomicInteger;
 /**
  * 消费者：
  * 1. 消费商品
