@@ -31,7 +31,11 @@ class ProxySubject implements ISubject{
 }
 
 class Factory{
-    private Factory(){}
+   // private Factory(){}
+    //
+//    public static Object getProxySubject(String RealSubjectClass,String ProxySubjectClass){
+//        return getInstance("RealSubjectClass",getInstance("ProxySubjectClass"));
+ //   }
     public static Object getInstance(String classname){
         try {
             Class cls  =  Class.forName(classname);
@@ -61,8 +65,9 @@ class Factory{
 public class TextDemo_1 {
 
     public static void main(String[] args) {
-    ISubject iSubject = (ISubject) Factory.getInstance("RealSubject");
+        ISubject iSubject = (ISubject) Factory.getInstance("RealSubject");
         ISubject iSubject1 = (ISubject) Factory.getInstance("ProxySubject",iSubject);
+//        ISubject iSubject = (ISubject) Factory.getProxySubject("RealSubject","ProxySubject");
         iSubject1.eat();
     }
 }
