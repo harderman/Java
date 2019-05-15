@@ -84,21 +84,39 @@ public class MyHeadSingleListImpl implements ICLinked {
 //删除链表中的第一个key
     @Override
     public int remove(int key) {
-        Node  prev =searchPrev(key);
-        if(prev == null){
-            throw new UnsupportedOperationException("没有key前驱");
-        }
-        int Delete = 0;
-       Node del = prev.next;
-        Delete = del.data;
-        prev.next = del.next;
-        return Delete;
+         Node  prev =searchPrev(key);
+         if(prev == null){
+             throw new UnsupportedOperationException("没有key前驱");
+         }
+         int Delete = 0;
+        Node del = prev.next;
+         Delete = del.data;
+         prev.next = del.next;
+         return Delete;
+//    Node prev = searchPrev(key);
+//    if(prev == null){
+//        throw new UnsupportedOperationException("没有key的前驱");
+//    }
+//
     }
 //删除链表中的所有key
     @Override
-    public void removeAllKey(int key) {
-
-    }
+    public void removeAllKey(int Key){
+            if(this.head == null||this.head.next == this.head) {
+                return ;
+            }
+            Node prev = this.head;
+            Node cur = this.head.next;
+            while (cur != this.head) {
+                if(cur.data == Key){
+                    prev.next = cur.next;
+                    cur = prev.next;
+                }else {
+                    prev = cur;
+                    cur = cur.next;
+                }
+            }
+        }
 
     @Override
     public int getLength() {
@@ -122,7 +140,12 @@ public class MyHeadSingleListImpl implements ICLinked {
     }
 
     @Override
+    /**
+     * jps
+     *
+     */
     public void clear() {
+
 
     }
 }
