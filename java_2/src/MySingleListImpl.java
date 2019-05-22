@@ -1,4 +1,4 @@
-public class xxx  implements ILinked{
+public class MySingleListImpl  implements ILinked{
     class Node{
         private int data;
         private Node next;
@@ -7,12 +7,15 @@ public class xxx  implements ILinked{
 
         }
     }
-
-    public xxx(Node head) {
+    private Node head;
+    public MySingleListImpl(Node head) {
         this.head = head;
     }
 
-    private Node head;
+    public Node getHead() {
+        return head;
+    }
+
     @Override
 //头插法
         public void addFirst(int data) {
@@ -255,4 +258,101 @@ public class xxx  implements ILinked{
     }
     this.head = null;
     }
+    //反转单链表
+    public Node reverseList(){
+        Node reverseHead = null;
+        Node cur = this.head;
+        Node prev = null;
+        while(cur != null ){
+            Node curNext = cur.next;
+            if(curNext == null){
+                reverseHead = cur;
+            }
+            cur.next = prev;
+            prev = cur;
+            cur = curNext;
+        }
+        return reverseHead;
+    }
+//    public Node reverse(){
+//        Node cur = this.head;
+//        Node prev = null;
+//        Node reverseHead = null;
+//        while(cur != null){
+//            Node curNext = cur.next;
+//            if(curNext == null){
+//                reverseHead = cur;
+//            }
+//
+//        }
+//    }
+    public void show(Node newHead){
+        Node cur = newHead;
+        while(cur != null){
+            System.out.print(cur.data+"");
+            cur = cur.next;
+        }
+        System.out.println();
+    }
+//制造环
+    public void createLoop() {
+        Node cur = this.head;
+        while(cur.next != null) {
+            cur = cur.next;
+        }
+        cur.next = this.head.next.next;
+    }
+//判断是否有环
+    public boolean hasCycle() {
+        Node fast = this.head;
+        Node slow = this.head;
+        while(fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+            if(fast == slow) {
+                //return true;
+                break;
+            }
+        }
+        if(fast != null && fast.next != null) {
+            return true;
+        }
+        return false;
+    }
+ //找出环的入口
+    public Node detectCycle(){
+        createLoop();
+        Node fast = this.head;
+        Node slow = this.head;
+        while(fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+            if(fast == slow) {
+                slow = this.head;
+                while (fast != slow){
+                    fast = fast.next;
+                    slow = slow.next;
+                }break;
+            }
+
+        }
+          return slow;
+    }
+ //倒数第K个节点
+    public Node findKthToTail(int k){
+        if(k > getLength()){
+            throw  new UnsupportedOperationException("k非法");
+        }
+        Node fast = this.head;
+        Node slow = this.head;
+        for(int i = 0;i<k;i++){
+            fast = fast.next;
+        }
+        while(fast != null){
+            slow = slow.next;
+            fast = fast.next;
+        }
+        return slow;
+    }
+
 }
