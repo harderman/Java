@@ -10,7 +10,7 @@ public class TestDemo1 {
         //mySequence.display();
         mySequence.addLast(60);
         mySequence.display();
-        mySequence.addIndex(1,15);
+        mySequence.addIndex(1, 15);
         mySequence.display();
 //        XXX.remove(10);
 //        XXX.display();
@@ -25,21 +25,22 @@ public class TestDemo1 {
 //       xxx.Node node = XXX.detectCycle();
 //        System.out.println(node);
 //        MySingleListImpl.Node m = new MySingleListImpl(null).new Node(-1);
-        public MySingleListImpl.Node mergeTwoLists(MySingleListImpl.Node headA, MySingleListImpl.Node headB) {
-            MySingleListImpl mySingleList1 = new MySingleListImpl(null);
-            MySingleListImpl.Node newHead =
-                    mySingleList1.new Node(-1);//虚拟节点
-
-            MySingleListImpl.Node tmpHead = newHead;
-
-            while(headA != null &&  headB != null) {
-                if() {
-                }
-                }
-            }
-
-
-            return newHead.next;
-        }
+//        public MySingleListImpl.Node mergeTwoLists(MySingleListImpl.Node headA, MySingleListImpl.Node headB) {
+//            MySingleListImpl mySingleList1 = new MySingleListImpl(null);
+//            MySingleListImpl.Node newHead =
+//                    mySingleList1.new Node(-1);//虚拟节点
+//
+//            MySingleListImpl.Node tmpHead = newHead;
+//
+//            while(headA != null &&  headB != null) {
+//                if() {
+//                }
+//                }
+//            }
+//
+//
+//            return newHead.next;
+//        }
 
     }
+}
