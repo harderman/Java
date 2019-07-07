@@ -30,10 +30,10 @@ public class statistics {
 //        }
 
   MyThread myThread = new MyThread();
-//        Thread thread = new Thread(myThread);
-//   thread.start();
-//String s = "abfddx";
-//        System.out.println(s.substring(1,2));
+       Thread thread = new Thread(myThread);
+  thread.start();
+String s = "abfddx";
+       System.out.println(s.substring(1,2));
         Map<Integer,String> map = new HashMap<>();
         map.put(1,"hello");
         map.put(2,"bit");
