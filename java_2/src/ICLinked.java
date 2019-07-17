@@ -17,7 +17,4 @@ public interface ICLinked {
         int getLength();
         void display();
         void clear();
-
-
-
 }
