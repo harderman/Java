@@ -17,27 +17,31 @@ public class MyHeadSingleListImpl implements ICLinked {
     }
 }
     private Node head;
-    public MyHeadSingleListImpl(Node head) {
-        this.head = head;
+    public MyHeadSingleListImpl() {
+        this.head = new Node();
         this.head.next = this.head;
     }
 
     @Override
     public void addFirst(int data) {
         Node node = new Node(data);
+//        this.head.next = node;
+//        node.next = this.head.next;
+        node.next = this.head.next;
         this.head.next = node;
-        node.next = this.head;
     }
 
     @Override
     public void addLast(int data) {
-        Node node = new Node(data);
+
         Node cur = this.head;
-        while(cur.next != head ){
+        while(cur.next != this.head ){
             cur = cur.next;
         }
+        Node node = new Node(data);
+
+        node.next = this.head;
         cur.next = node;
-        node.next = head;
     }
 //检验index是否合法
     private void checkIndex(int index) {
@@ -131,8 +135,8 @@ public class MyHeadSingleListImpl implements ICLinked {
 //输出当前链表
     @Override
     public void display() {
-        Node cur = this.head;
-        while (cur.next != this.head){
+        Node cur = this.head.next;
+        while (cur != this.head){
             System.out.print(cur.data+" ");
             cur = cur.next;
         }
@@ -147,5 +151,14 @@ public class MyHeadSingleListImpl implements ICLinked {
     public void clear() {
 
 
+    }
+
+    public static void main(String[] args) {
+        MyHeadSingleListImpl m = new MyHeadSingleListImpl();
+        m.addLast(13);
+        m.addFirst(12);
+        m.addFirst(12);
+        m.addFirst(12);
+        m.display();
     }
 }
