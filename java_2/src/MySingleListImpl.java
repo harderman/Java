@@ -4,7 +4,6 @@ public class MySingleListImpl  implements ILinked{
         private Node next;
         public Node(int data) {
             this.data = data;
-
         }
     }
     private Node head;
@@ -355,4 +354,19 @@ public class MySingleListImpl  implements ILinked{
         return slow;
     }
 
+    public static void main(String[] args) {
+        MySingleListImpl m = new MySingleListImpl(null);
+        m.addFirst(12);
+        m.addLast(13);
+        m.addLast(13);
+        m.addLast(13);
+        m.addLast(13);
+
+        m.display();
+        System.out.println(m.getLength());
+//        ILinked linked = new MySingleListImpl(null);
+//        linked.addFirst(12);
+//        linked.addLast(13);
+//        linked.display();
+    }
 }
