@@ -140,7 +140,7 @@ public class MyHeadSingleListImpl implements ICLinked {
             System.out.print(cur.data+" ");
             cur = cur.next;
         }
-        System.out.println();
+            System.out.println();
     }
 
     @Override
@@ -156,9 +156,9 @@ public class MyHeadSingleListImpl implements ICLinked {
     public static void main(String[] args) {
         MyHeadSingleListImpl m = new MyHeadSingleListImpl();
         m.addLast(13);
+        m.addFirst(11);
         m.addFirst(12);
-        m.addFirst(12);
-        m.addFirst(12);
+        m.addFirst(114);
         m.display();
     }
 }
