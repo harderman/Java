@@ -17,7 +17,6 @@ public class Server {
         try (ServerSocket serverSocket = new ServerSocket(port)) {
             while (true) {
                 // 一次循环，处理一个用户请求
-
                 // 通过 accept 方法调用，返回一个代表建立好连接的 TCP Socket
                 try (Socket socket = serverSocket.accept()) {
                     logger.info("{} 已连接。", socket.getInetAddress().getHostName());
@@ -31,6 +30,7 @@ public class Server {
                             command.run(os);
                         } catch (Exception e) {
                             e.printStackTrace();
+                            Protocol.writeError(os,"wrong order");
                         }
                     }
                 }
